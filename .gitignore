@@ -5,5 +5,5 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-/instance/*.db
+# /instance/*.db
 /Link/*txt
