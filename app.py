@@ -31,7 +31,7 @@ def submit():
         db.session.add(new_data)
         db.session.commit()
         sender_email = "payadikishan@gmail.com"
-        reciever_email =  "payadi@gmail.com"
+        reciever_email =  "payadikishan@gmail.com"
         # password = input(str("Please enter your password"))
         SUBJECT = 'Portfolio Resonse'
         # TEXT = input(str('Please enter the Message for the mail'))
@@ -39,11 +39,12 @@ def submit():
         server = smtplib.SMTP('smtp.gmail.com', 587)
         server.starttls()
         with open('password.txt', 'r') as file:
+            print('inside password file')
             for password in file:
-                server.login(sender_email, 'password')
+                server.login(sender_email, password)
                 print("login sucess")
                 server.sendmail(sender_email, reciever_email, message)
-        print("horray")
+                print("horray")
         return f'Thank you {Name} you message "{Message}" has been submitted'
     else:
         return "Hi you with get method"
