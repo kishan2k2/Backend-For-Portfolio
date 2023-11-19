@@ -33,7 +33,8 @@ def submit():
         sender_email = "payadikishan@gmail.com"
         reciever_email =  "payadikishan@gmail.com"
         # password = input(str("Please enter your password"))
-        SUBJECT = f'Portfolio Resonse from {Email}'
+        SUBJECT = f'Portfolio Resonse from {Name}'
+        Message = f'Resoponse from {Email} \n {Message}'
         # TEXT = input(str('Please enter the Message for the mail'))
         message = 'Subject: {}\n\n{}'.format(SUBJECT, Message)
         server = smtplib.SMTP('smtp.gmail.com', 587)
