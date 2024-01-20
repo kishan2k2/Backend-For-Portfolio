@@ -46,7 +46,7 @@ def submit():
                 print("login sucess")
                 server.sendmail(sender_email, reciever_email, message)
                 print("horray")
-        return f'Thank you {Name} you message "{Message}" has been submitted'
+        return f'Thank you for such a long patience dear {Name} your message "{Message}" has been submitted'
     else:
         return "Hi you with get method"
 @app.route('/view_data', methods=['GET'])
