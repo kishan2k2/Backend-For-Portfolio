@@ -1,3 +1,4 @@
+import os
 import smtplib
 from flask import Flask, render_template, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
@@ -39,13 +40,15 @@ def submit():
         message = 'Subject: {}\n\n{}'.format(SUBJECT, Message)
         server = smtplib.SMTP('smtp.gmail.com', 587)
         server.starttls()
-        with open('password.txt', 'r') as file:
-            print('inside password file')
-            for password in file:
-                server.login(sender_email, password)
-                print("login sucess")
-                server.sendmail(sender_email, reciever_email, message)
-                print("horray")
+        password = os.environ.get(password)
+        print(password)
+        # with open('password.txt', 'r') as file:
+        #     print('inside password file')
+        #     for password in file:
+        server.login(sender_email, password)
+        print("login sucess")
+        server.sendmail(sender_email, reciever_email, message)
+        #         print("horray")
         return f'Thank you {Name} you message "{Message}" has been submitted'
     else:
         return "Hi you with get method"
