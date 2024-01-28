@@ -41,7 +41,7 @@ def submit():
         server = smtplib.SMTP('smtp.gmail.com', 587)
         server.starttls()
         password = os.environ.get(password)
-        print(password)
+        # print(password)
         # with open('password.txt', 'r') as file:
         #     print('inside password file')
         #     for password in file:
